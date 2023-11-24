@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/converter")
 public class ConverterController {
 
-    private static final double METERS_TO_FEET_CONVERSION_FACTOR = 3.281;
+    static final double METERS_TO_FEET_CONVERSION_FACTOR = 3.281;
     private static final double KILOGRAMS_TO_POUNDS_CONVERSION_FACTOR = 2.205;
-    private static final double CELSIUS_TO_FAHRENHEIT_CONVERSION_FACTOR = 9.0 / 5.0;
+    static final double CELSIUS_TO_FAHRENHEIT_CONVERSION_FACTOR = 9.0 / 5.0;
 
     @GetMapping("/length-to-imperial/{metricValue}")
     public double convertLengthToImperial(@PathVariable double metricValue) {
@@ -52,4 +52,5 @@ public class ConverterController {
     private double convertTemperature(double value, double conversionFactor, double offset) {
         return (value * conversionFactor) + offset;
     }
+
 }

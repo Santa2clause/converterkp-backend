@@ -9,4 +9,5 @@ public class KingpriceApplication {
     public static void main(String[] args) {
         SpringApplication.run(KingpriceApplication.class, args);
     }
+    
 }
